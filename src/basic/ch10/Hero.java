@@ -55,5 +55,6 @@ public class Hero {
 		if (this.hp <= 0) {
 			this.isDie = true;
 		}
+		
 	}
 }
