@@ -1,4 +1,4 @@
-package basic.ex13;
+package basic.ch13;
 
 // 가지고 오다. 수입하다.
 import java.util.Random;
