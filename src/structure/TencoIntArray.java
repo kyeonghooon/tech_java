@@ -1,9 +1,8 @@
 package structure;
 
 /**
- * 배열을 활용한 클래스를 설계 
- * 물론 이미 자바 표준 API 개발자들이 잘 만들어 준 클래스들이 존재한다.
- * 하지만 직접 기능을 확장해서 만들어 보자.
+ * 배열을 활용한 클래스를 설계 물론 이미 자바 표준 API 개발자들이 잘 만들어 준 클래스들이 존재한다. 하지만 직접 기능을 확장해서 만들어
+ * 보자.
  */
 public class TencoIntArray {
 
@@ -74,14 +73,17 @@ public class TencoIntArray {
 			return;
 		}
 
+		System.out.println("Log 2 : " + count);
 		// 인덱스 범위를 잘못 지정했다면 방어적 코드
 		if (position < 0 || position >= count) {
 			System.out.println("잘못된 요청입니다.");
 			return;
 		}
-		// intArr[position]; --> 사용자가 인덱스 0번 요청
-		// [100, 200, 300, 400]
-		for (int i = position; i < intArr.length - position; i++) {
+		for (int i = position; i < count; i++) {
+			if (position == ARRAY_SIZE - 1) {
+				intArr[i] = 0;
+			}
+			System.out.println("Log 3 : " + i);
 			intArr[i] = intArr[i + 1];
 		}
 		count--;
