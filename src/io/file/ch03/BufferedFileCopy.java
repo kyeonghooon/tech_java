@@ -29,9 +29,10 @@ public class BufferedFileCopy {
 				// 파일의 출력
 				bos.write(data);
 			}
+			bos.flush(); // 매번 입출력을 발생하는 것이 아니라 한번에 입출력을 사용
 			System.out.println("입력 스트림 --> 출력스트림 --> 입력 --> 출력의 반복 완료");
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace(); // 파일 저장 가능 가능
 		}
 		long endTime = System.nanoTime();
 		long duration = endTime - startTime;
